@@ -12,8 +12,24 @@ function renderCard(card, name) {
     pQuote.textContent = `"${card.quote}"`
     li.id = 'renderedCard'
 
-    li.append(img, h1House, inputName, pQuote)
-    document.querySelector('#sort-list').append(li)
+    if (card.house === 'Slytherin') {
+        let checkBox = document.createElement('input')
+        checkBox.type = 'checkbox'
+        checkBox.id = 'checkBox'
+        pQuote.textContent = ` "Not Slytherin, not Slytherin!" `
+
+        pQuote.append(checkBox)
+        li.append(img, h1House, inputName, pQuote)
+        document.querySelector('#sort-list').append(li)
+
+        checkBox.addEventListener('change', () => {
+            removeCard()
+            renderCard(cards.Gryffindor, name)
+        })
+    } else {
+        li.append(img, h1House, inputName)
+        document.querySelector('#sort-list').append(li)
+    }
 }
 
 function renderSortCard(card) {
@@ -37,8 +53,6 @@ function removeCard() {
 
 document.querySelector('#input-form').addEventListener('submit', (e) => {
     e.preventDefault()
-
-    console.log(e)
     
     let input = document.querySelector('#inputName')
     let form = document.querySelector('#input-form')
@@ -53,7 +67,6 @@ document.querySelector('#input-form').addEventListener('submit', (e) => {
     } else {
         let randomCard = grabRandom()
         let name = e.target['inputName'].value
-        console.log(e.target['inputName'].value)
 
         renderCard(cards[randomCard], name)
     }
