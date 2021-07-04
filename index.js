@@ -1,16 +1,18 @@
-function renderCard(card) {
+function renderCard(card, name) {
     let li = document.createElement('li')
-    let h2House = document.createElement('h2')
+    let inputName = document.createElement('h2')
+    let h1House = document.createElement('h1')
     let img = document.createElement('img')
     let pQuote = document.createElement('p')
 
     li.className = 'card'
-    h2House.textContent = card.house
+    h1House.textContent = card.house
+    inputName.textContent = name
     img.src = card.image_url
     pQuote.textContent = `"${card.quote}"`
     li.id = 'renderedCard'
 
-    li.append(img, h2House, pQuote)
+    li.append(img, h1House, inputName, pQuote)
     document.querySelector('#sort-list').append(li)
 }
 
@@ -35,6 +37,8 @@ function removeCard() {
 
 document.querySelector('#input-form').addEventListener('submit', (e) => {
     e.preventDefault()
+
+    console.log(e)
     
     let input = document.querySelector('#inputName')
     let form = document.querySelector('#input-form')
@@ -47,11 +51,13 @@ document.querySelector('#input-form').addEventListener('submit', (e) => {
     if (input.value.length == 0) {
 
     } else {
-        form.reset()
         let randomCard = grabRandom()
-        renderCard(cards[randomCard])
-    }
+        let name = e.target['inputName'].value
+        console.log(e.target['inputName'].value)
 
+        renderCard(cards[randomCard], name)
+    }
+    form.reset()
 })
 
 document.querySelector('#submitButton').addEventListener('click', (e) => {
