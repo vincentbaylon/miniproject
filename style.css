@@ -12,24 +12,7 @@
     color: #000;
     font-size: 14px;
     transition: all 0.2s;
-    background-color: #fff8e7;
-  
-  }
-  h1{
-    font-size: 40px;
-  }
-  aside{
-    background-color: rgb(219, 215, 215);
-    color: #fff;
-    padding: 2rem;
-    font-size: 20px;
-  
-  }
-  aside h1{
-    font-size: 30px;
-  }
-  aside ul li {
-    list-style: none;
+    background-color: rgb(255, 255, 255);
   }
   
   .container {
@@ -37,6 +20,7 @@
     margin: 0;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
   }
   
   /* menu */
@@ -44,10 +28,18 @@
     padding: 0.5rem;
     background-color: black;
     color: #fff;
+    text-align: center;
+    height: 100px;
   }
   
+  #menu h1 {
+    font-family: cursive;
+    font-size: 50px;
+    color: #ef27a6;
+  }
+
   /* forms */
-  #book-form {
+  #input-form {
     margin: 0 auto;
     max-width: 400px;
     background-color: #fff;
@@ -55,14 +47,15 @@
     box-shadow: 2px 2px 7px -1px rgba(0, 0, 0, 0.75);
   }
   
-  #book-form input,#book-form textarea {
+  #input-form input,#input-form textarea {
     width: 100%;
     border: 1px solid rgba(34, 36, 38, 0.15);
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
+    text-transform: capitalize;
   }
   
-  #book-form input[type="submit"] {
+  #input-form input[type="submit"] {
     margin: 1em 0 0 0;
     width: auto;
   }
@@ -75,13 +68,14 @@
     list-style: none;
     margin: 0 auto;
     padding: 2rem;
+    width: 500px;
   }
   
   .card {
     display: grid;
     grid-template-rows: auto 1fr auto;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #dbdbdb;
     animation: enter 0.25s ease-out;
     box-shadow: 2px 2px 7px -1px rgba(0, 0, 0, 0.75);
   }
@@ -109,6 +103,12 @@
     justify-content: space-between;
     padding: 0.5rem;
   }
+
+  p {
+    background-color: darkgrey;
+    text-align: center;
+    font-size: 20px;
+  }
   
   /* buttons */
   button {
@@ -116,7 +116,7 @@
     font-size: 0.8rem;
     font-weight: 700;
     padding: 0.75em 1.5em;
-    background-color: #4ac751;
+    background-color: #ff299c;
     color: #fff;
     transition: opacity 0.2s ease;
   }
@@ -125,3 +125,18 @@
     opacity: 0.8;
   }
   
+  /* .center {
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22%;
+    background-color: #b0b5b3;
+  }
+
+  .center img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  } */
